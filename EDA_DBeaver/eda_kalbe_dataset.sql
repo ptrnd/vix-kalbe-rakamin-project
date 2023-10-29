@@ -37,10 +37,10 @@ LIMIT 1;
 -- query 4 : Tentukan nama produk terlaris dengan total amount terbanyak!
 
 SELECT
-    p.ProductName,
-    SUM(t."Total Amount") AS TotalAmount
+    p."Product Name",
+    SUM(t.totalamount) AS TotalAmount
 FROM Product p
 JOIN Transaction t ON p.ProductID = t.ProductID
-GROUP BY p.ProductName
+GROUP BY p."Product Name"
 ORDER BY TotalAmount DESC
 LIMIT 1;
